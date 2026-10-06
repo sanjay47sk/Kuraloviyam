@@ -12,28 +12,43 @@
 <div class="trail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 <main id="stage" aria-live="polite">
   <section id="world" aria-label="படிக்கும் குழந்தை">
-    <div class="focus" id="focus"></div>
-    <svg id="threads" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+    <div class="scene">
     <div class="child" id="child">
-      <img id="childImg" alt="" hidden>
-      <svg id="childSvg" viewBox="0 0 200 200" aria-hidden="true">
+      <img id="childImg" src="assets/child-studying.png" width="1359" height="1158" alt="A boy studying calmly at his wooden desk" decoding="async"
+           onerror="this.hidden=true;document.getElementById('childSvg').style.display='block'">
+      <svg id="childSvg" viewBox="0 0 200 200" aria-hidden="true" style="display:none">
         <rect x="20" y="150" width="160" height="10" rx="4" fill="#7a5233"/>
         <path d="M60 150c0-40 20-62 40-62s40 22 40 62z" fill="#b8643f"/>
         <circle cx="100" cy="66" r="24" fill="#8a5a3c"/><path d="M76 62c4-24 44-24 48 0-12-10-36-10-48 0z" fill="#2c1b10"/>
         <path d="M62 140l38-12 38 12-38 10z" fill="#f3e9d2" stroke="#5b3a21" stroke-width="2"/>
       </svg>
     </div>
+    <div class="focus" id="focus"></div>
+    <svg id="threads" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
     <div id="things"></div>
+    </div>
     <ol class="senses" id="senses" aria-label="ஐம்புலன்கள்"></ol>
   </section>
 
   <section id="turtle" hidden aria-label="ஆமை">
-    <svg viewBox="0 0 400 260" id="tsvg">
-      <ellipse cx="200" cy="232" rx="150" ry="10" fill="#3b2a1a" opacity=".12"/>
+    <svg viewBox="0 40 640 370" id="tsvg" role="group" aria-label="ஐந்து உறுப்புகளுடன் ஒரு ஆமை">
+      <defs>
+        <radialGradient id="shellG" cx="38%" cy="22%" r="85%"><stop offset="0" stop-color="#a5b074"/><stop offset=".55" stop-color="#708048"/><stop offset="1" stop-color="#3c4825"/></radialGradient>
+        <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#1c1408" stop-opacity=".45"/></linearGradient>
+        <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b6bd84"/><stop offset="1" stop-color="#7a8650"/></linearGradient>
+        <linearGradient id="skinFar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d8856"/><stop offset="1" stop-color="#555f37"/></linearGradient>
+        <clipPath id="shellClip"><path d="M108 285C108 150 200 66 316 66S524 150 524 285Z"/></clipPath>
+      </defs>
+      <ellipse cx="316" cy="350" rx="255" ry="15" fill="#3b2a1a" opacity=".16"/>
       <g id="limbs"></g>
-      <path id="shell" d="M85 180c0-70 52-112 115-112s115 42 115 112z" fill="#6f7d4a" stroke="#3b2a1a" stroke-width="4"/>
-      <path d="M200 68v112M130 90l30 90M270 90l-30 90M100 140h200" stroke="#3b2a1a" stroke-width="3" fill="none" opacity=".55"/>
-      <path d="M85 180h230" stroke="#3b2a1a" stroke-width="5"/>
+      <path d="M104 282h424q-4 24-52 27H158q-48-3-54-27z" fill="#d2bd86" stroke="#3b2a1a" stroke-width="3"/>
+      <g id="shellG2">
+        <path d="M108 285C108 150 200 66 316 66S524 150 524 285Z" fill="url(#shellG)"/>
+        <g clip-path="url(#shellClip)"><g id="scutes"></g><g id="rim"></g>
+          <path d="M108 285C108 150 200 66 316 66S524 150 524 285Z" fill="url(#shade)"/>
+          <ellipse cx="240" cy="130" rx="70" ry="26" fill="#fff" opacity=".16" transform="rotate(-24 240 130)"/></g>
+        <path d="M108 285C108 150 200 66 316 66S524 150 524 285Z" fill="none" stroke="#2f3a1c" stroke-width="5"/>
+      </g>
     </svg>
   </section>
 
@@ -41,6 +56,7 @@
 
   <section id="finale" hidden aria-label="நிறைவு">
     <div class="seal" id="seal"><img id="vImg" alt="திருவள்ளுவர்" hidden><span id="vFallback">வள்ளுவர்</span></div>
+    <p class="cap" id="vCap" hidden>திருவள்ளுவர்</p>
     <ol class="chain" id="chain"></ol>
     <blockquote class="kural"><p>ஒருமையுள் ஆமைபோல் ஐந்தடக்கல் ஆற்றின்</p><p>எழுமையும் ஏமாப்பு உடைத்து.</p></blockquote>
     <p class="learn" id="learn"></p>
