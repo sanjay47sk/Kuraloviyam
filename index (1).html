@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ta">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ஐந்தடக்கல் · குறள் செயலில்</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@500;700&family=Noto+Sans+Tamil:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-phase="calm">
+<div class="trail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<main id="stage" aria-live="polite">
+  <section id="world" aria-label="படிக்கும் குழந்தை">
+    <div class="focus" id="focus"></div>
+    <svg id="threads" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+    <div class="child" id="child">
+      <img id="childImg" alt="" hidden>
+      <svg id="childSvg" viewBox="0 0 200 200" aria-hidden="true">
+        <rect x="20" y="150" width="160" height="10" rx="4" fill="#7a5233"/>
+        <path d="M60 150c0-40 20-62 40-62s40 22 40 62z" fill="#b8643f"/>
+        <circle cx="100" cy="66" r="24" fill="#8a5a3c"/><path d="M76 62c4-24 44-24 48 0-12-10-36-10-48 0z" fill="#2c1b10"/>
+        <path d="M62 140l38-12 38 12-38 10z" fill="#f3e9d2" stroke="#5b3a21" stroke-width="2"/>
+      </svg>
+    </div>
+    <div id="things"></div>
+    <ol class="senses" id="senses" aria-label="ஐம்புலன்கள்"></ol>
+  </section>
+
+  <section id="turtle" hidden aria-label="ஆமை">
+    <svg viewBox="0 0 400 260" id="tsvg">
+      <ellipse cx="200" cy="232" rx="150" ry="10" fill="#3b2a1a" opacity=".12"/>
+      <g id="limbs"></g>
+      <path id="shell" d="M85 180c0-70 52-112 115-112s115 42 115 112z" fill="#6f7d4a" stroke="#3b2a1a" stroke-width="4"/>
+      <path d="M200 68v112M130 90l30 90M270 90l-30 90M100 140h200" stroke="#3b2a1a" stroke-width="3" fill="none" opacity=".55"/>
+      <path d="M85 180h230" stroke="#3b2a1a" stroke-width="5"/>
+    </svg>
+  </section>
+
+  <section id="choice" hidden aria-label="தேர்வு"><div class="options" id="options"></div></section>
+
+  <section id="finale" hidden aria-label="நிறைவு">
+    <div class="seal" id="seal"><img id="vImg" alt="திருவள்ளுவர்" hidden><span id="vFallback">வள்ளுவர்</span></div>
+    <ol class="chain" id="chain"></ol>
+    <blockquote class="kural"><p>ஒருமையுள் ஆமைபோல் ஐந்தடக்கல் ஆற்றின்</p><p>எழுமையும் ஏமாப்பு உடைத்து.</p></blockquote>
+    <p class="learn" id="learn"></p>
+    <button class="btn ghost" id="again">மீண்டும் பார்</button>
+  </section>
+</main>
+
+<footer id="narrator">
+  <p id="ta" class="ta"></p><p id="en" class="en"></p>
+  <button class="btn" id="go" hidden></button>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
