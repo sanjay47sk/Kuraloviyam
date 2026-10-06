@@ -56,10 +56,10 @@ body[data-phase=pause] .thread,body[data-phase=turtle] .thread,body[data-phase=w
 .chain{display:flex;flex-wrap:wrap;gap:6px 0;justify-content:center;list-style:none;padding:0;font:700 clamp(14px,3.5vw,18px) var(--serif)}
 .chain li{opacity:0;animation:rise .8s forwards}
 .chain li+li::before{content:"→";margin:0 8px;color:var(--gold)}
-.kural{font:700 clamp(14px,3.7vw,28px)/1.75 var(--serif);color:var(--brown);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:10px 14px;max-width:100%;opacity:0;animation:rise 1.4s 1.8s forwards}
+.kural{font:700 clamp(14px,3.7vw,28px)/1.75 var(--serif);color:var(--brown);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:10px 14px;max-width:100%;opacity:0;overflow:hidden;animation:rise .8s 1s forwards}
 .kural p{white-space:nowrap}
-.learn{max-width:46ch;line-height:1.7;font-size:clamp(13px,3.4vw,16px);opacity:0;animation:rise 1.2s 3.2s forwards}
-#finale .row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;opacity:0;animation:rise 1s 3.6s forwards}
+.learn{max-width:46ch;line-height:1.7;font-size:clamp(13px,3.4vw,16px);opacity:0;animation:rise 1.2s 4.8s forwards}
+#finale .row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;opacity:0;animation:rise 1s 5.6s forwards}
 @keyframes rise{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
 #narrator{padding:14px 16px calc(18px + env(safe-area-inset-bottom));text-align:center;min-height:178px;display:grid;justify-items:center;align-content:start;gap:4px;background:linear-gradient(transparent,rgba(244,235,210,.9) 30%)}
 .ta{font:700 clamp(17px,4.4vw,25px)/1.5 var(--serif);color:var(--brown);max-width:36ch}
@@ -69,7 +69,7 @@ body[data-phase=pause] .thread,body[data-phase=turtle] .thread,body[data-phase=w
 .btn.ghost{background:transparent;color:var(--brown);border:2px solid var(--brown)}
 .btn:focus-visible,.thing:focus-visible,.opt:focus-visible{outline:4px solid var(--gold);outline-offset:3px}
 .btn.pulse{animation:throb 1.6s infinite}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}.kural,.learn,#again,.chain li{opacity:1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}.kural,.learn,#again,#finale .row,.chain li{opacity:1}}
 
 #stage>#game{width:min(100%,940px,max(300px,calc((100dvh - 230px)*1.6)))}
 .gwrap{position:relative;border:2px solid var(--gold);border-radius:6px 26px 6px 26px;overflow:hidden;background:#efe3c3}
@@ -145,4 +145,18 @@ body[data-phase=game] #narrator{min-height:96px}
  .side.statue .ach li::before{content:"";grid-row:auto;display:block;position:absolute;left:0;top:.45em;width:6px;height:6px;border-radius:50%;background:var(--gold);font:0/0 serif}
  .side.statue .ach li b{display:block;font:700 13px/1.35 var(--serif);opacity:1}
  .side.statue .ach li span{display:block;font:400 11.5px/1.35 var(--sans);opacity:.75;margin-top:1px}
+}
+
+/* kural words drop in one by one from the top rule */
+.kural .w{display:inline-block;animation:kfall 1s cubic-bezier(.22,.8,.3,1) both;will-change:transform,opacity}
+@keyframes kfall{
+ 0%{opacity:0;transform:translateY(-120%) rotate(-5deg)}
+ 55%{opacity:1;transform:translateY(8%) rotate(1.5deg)}
+ 75%{transform:translateY(-3%) rotate(-.5deg)}
+ 100%{opacity:1;transform:none}
+}
+
+@media(min-width:1280px){
+ .side.statue .ttl{margin:0 0 10px;font:700 clamp(20px,1.7vw,26px)/1.2 var(--serif);color:var(--brown);text-align:center;letter-spacing:.02em}
+ .side.statue .ttl::after{content:"";display:block;width:46px;height:3px;margin:8px auto 0;border-radius:2px;background:var(--gold)}
 }
