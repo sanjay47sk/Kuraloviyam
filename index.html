@@ -10,6 +10,27 @@
 </head>
 <body data-phase="calm">
 <div class="trail" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<aside class="side left statue" aria-label="திருவள்ளுவர் · திருக்குறள்">
+  <div class="stage3d"><i class="glow"></i><img src="assets/statue.webp" alt="Bronze statue of Thiruvalluvar" width="304" height="728" decoding="async"><i class="ground"></i></div>
+  <h3>திருவள்ளுவர் <small>Thiruvalluvar · author of the Thirukkural</small></h3>
+  <ul class="ach">
+    <li><b>1,330 குறள்</b><span>133 chapters, 10 couplets each</span></li>
+    <li><b>அறம் · பொருள் · இன்பம்</b><span>Virtue, wealth and love</span></li>
+    <li><b>உலகப் பொதுமறை</b><span>Ethics for all people, not one faith</span></li>
+    <li><b>பல மொழிகளில்</b><span>Translated into many world languages</span></li>
+    <li><b>133 அடி சிலை</b><span>Kanyakumari statue, one foot per chapter</span></li>
+  </ul>
+</aside>
+<aside class="side right" aria-label="எப்படி விளையாடுவது">
+  <h3>எப்படி? <small>How it works</small></h3>
+  <ol>
+    <li><b>ஆசை</b><span>Tap what pulls him</span></li>
+    <li><b>நில்</b><span>Pause the pull</span></li>
+    <li><b>ஆமை</b><span>Touch the 5 limbs</span></li>
+    <li><b>தேர்வு</b><span>Make the choice</span></li>
+    <li><b>பயணம்</b><span>Walk the road</span></li>
+  </ol>
+</aside>
 <main id="stage" aria-live="polite">
   <section id="world" aria-label="படிக்கும் குழந்தை">
     <div class="scene">
@@ -52,7 +73,10 @@
     </svg>
   </section>
 
-  <section id="choice" hidden aria-label="தேர்வு"><div class="options" id="options"></div></section>
+  <section id="choice" hidden aria-label="தேர்வு">
+    <figure class="invite"><picture><source srcset="assets/friends-invite.webp" type="image/webp"><img src="assets/friends-invite.jpg" width="1200" height="800" decoding="async" alt="Friends in school uniform wave him over to play football while he stands with his school bag"></picture></figure>
+    <div class="options" id="options"></div>
+  </section>
 
   <section id="game" hidden aria-label="பயணம் – விளையாட்டு">
     <div class="gwrap"><canvas id="gc" role="img" aria-label="சிறுவன் இலக்கை நோக்கி நடக்கும் பாதை"></canvas>
