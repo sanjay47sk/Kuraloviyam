@@ -160,6 +160,13 @@ function choose(o, b) {
 }
 
 /* ---------- Finale ---------- */
+function fitKural() { // shrink the font until the longest line fits inside the box
+  const k = document.querySelector('.kural'); if (!k || $('finale').hidden) return;
+  k.style.fontSize = ''; let fs = parseFloat(getComputedStyle(k).fontSize);
+  const over = () => [...k.querySelectorAll('p')].some(p => p.scrollWidth > p.clientWidth + 1);
+  while (over() && fs > 11) { fs -= 0.5; k.style.fontSize = fs + 'px'; }
+}
+addEventListener('resize', fitKural);
 function finale() {
   show('finale'); setPhase('won', 4);
   $('chain').innerHTML = CONTENT.chain.map((w, i) => `<li style="animation-delay:${i * .45}s">${w}</li>`).join('');
@@ -172,6 +179,7 @@ function finale() {
       sp.style.animationDelay = (1.7 + wi++ * 0.32).toFixed(2) + 's'; p.appendChild(sp);
     });
   });
+  fitKural();
   $('learn').textContent = 'ஆசையை உணர்வதும், அதற்குக் கீழ்ப்படியாமல் தேர்வு செய்வதும் ஐந்தடக்கல். இந்த அடக்கம் காலமெல்லாம் காக்கும் கவசம்.';
   say('ஆசை வந்தாலும், தேர்வு உன்னுடையது.', 'I can feel an impulse without having to obey it. The tortoise shows us how, and the shell is our self-control.');
 }
