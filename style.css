@@ -59,7 +59,7 @@ body[data-phase=pause] .thread,body[data-phase=turtle] .thread,body[data-phase=w
 .kural{font:700 clamp(14px,3.7vw,28px)/1.75 var(--serif);color:var(--brown);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:10px 14px;max-width:100%;opacity:0;animation:rise 1.4s 1.8s forwards}
 .kural p{white-space:nowrap}
 .learn{max-width:46ch;line-height:1.7;font-size:clamp(13px,3.4vw,16px);opacity:0;animation:rise 1.2s 3.2s forwards}
-#again{opacity:0;animation:rise 1s 3.8s forwards}
+#finale .row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;opacity:0;animation:rise 1s 3.6s forwards}
 @keyframes rise{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
 #narrator{padding:14px 16px calc(18px + env(safe-area-inset-bottom));text-align:center;min-height:178px;display:grid;justify-items:center;align-content:start;gap:4px;background:linear-gradient(transparent,rgba(244,235,210,.9) 30%)}
 .ta{font:700 clamp(17px,4.4vw,25px)/1.5 var(--serif);color:var(--brown);max-width:36ch}
@@ -70,3 +70,20 @@ body[data-phase=pause] .thread,body[data-phase=turtle] .thread,body[data-phase=w
 .btn:focus-visible,.thing:focus-visible,.opt:focus-visible{outline:4px solid var(--gold);outline-offset:3px}
 .btn.pulse{animation:throb 1.6s infinite}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}.kural,.learn,#again,.chain li{opacity:1}}
+
+#stage>#game{width:min(100%,940px,max(300px,calc((100dvh - 230px)*1.6)))}
+.gwrap{position:relative;border:2px solid var(--gold);border-radius:6px 26px 6px 26px;overflow:hidden;background:#efe3c3}
+#gc{display:block;width:100%;aspect-ratio:1.6;touch-action:none;cursor:grab}
+.govl{position:absolute;inset:0;display:grid;align-content:center;justify-items:center;gap:8px;padding:16px;text-align:center;background:rgba(244,235,210,.86)}
+.govl[hidden]{display:none}
+.govl h2{font:700 clamp(24px,6vw,40px)/1.3 var(--serif);color:var(--brown);animation:rise .7s both}
+.govl p{max-width:34ch;font-size:clamp(13px,3.2vw,16px);line-height:1.6}
+.govl #gS{font-family:var(--serif);font-weight:600;font-size:clamp(15px,3.8vw,19px)}
+.gk{display:grid;gap:6px;justify-items:center}
+.gk span{opacity:0;animation:rise .9s forwards}
+.gk .l1{font:700 clamp(18px,4.6vw,26px) var(--serif);color:var(--clay);animation-delay:.7s}
+.gk .l2{animation-delay:1.5s;max-width:34ch}.gk .l3{font:600 13px var(--serif);color:var(--green);animation-delay:2.4s}
+.govl .row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.govl.win{background:rgba(250,243,225,.8)}
+body[data-phase=game] #narrator{min-height:96px}
+@media(max-width:600px){#stage>#game{width:100%}#gc{aspect-ratio:1/1.25}.govl{gap:5px;padding:12px}}

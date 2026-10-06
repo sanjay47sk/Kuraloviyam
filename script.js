@@ -44,7 +44,7 @@ function setPhase(p, step) {
   S.phase = p; document.body.dataset.phase = p;
   document.querySelectorAll('.trail i').forEach((d, i) => d.classList.toggle('on', i <= step));
 }
-function show(id) { ['world', 'turtle', 'choice', 'finale'].forEach(s => $(s).hidden = s !== id); }
+function show(id) { ['world', 'turtle', 'choice', 'game', 'finale'].forEach(s => $(s).hidden = s !== id); }
 
 /* ---------- Scene 1: calm → the pull ---------- */
 function buildWorld() {
@@ -174,6 +174,7 @@ function probe(src, img, hideEl) {
 probe(CONTENT.assets.valluvar, $('vImg'), $('vFallback'));
 $('vImg').addEventListener('load', () => { $('vCap').hidden = false; $('vImg').closest('.seal').style.display = 'block'; });
 $('again').onclick = startStory;
+$('play').onclick = () => Game.open(finale);
 function intro() { // wait for the learner before the narration begins
   clearTimers(); buildWorld(); show('world'); setPhase('calm', 0);
   say('ஒரு சிறிய தருணம். ஒரு பெரிய தேர்வு.', 'A short story about five senses and a tortoise.', { label: 'கதையைத் தொடங்கு', fn: startStory });
